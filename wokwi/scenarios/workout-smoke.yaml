@@ -1,0 +1,23 @@
+name: workout-smoke
+version: 1
+# Wokwi CLI scenario support varies by release. This file records the intended
+# stable serial markers and virtual controls for automation-capable runners.
+expect:
+  - "GB:BOOT ok target=wokwi"
+  - "GB:DISPLAY:REFRESH type=full screen=home"
+  - "GB:INPUT event=encoder_press"
+  - "GB:STATE screen=start_workout"
+  - "GB:HAPTIC:PLAY effect=click"
+  - "GB:STATE screen=active_set"
+  - "GB:INPUT event=rotate_right"
+  - "GB:INPUT event=encoder_press"
+  - "GB:STATE screen=rest_timer"
+  - "GB:DISPLAY:REFRESH type=partial screen=rest_timer"
+  - "GB:HAPTIC:PLAY effect=confirm"
+flow:
+  - boot
+  - press: encoder
+  - press: encoder
+  - rotate: clockwise
+  - press: encoder
+  - press: back
