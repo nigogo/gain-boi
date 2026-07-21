@@ -1,0 +1,5 @@
+build*/
+.pio/
+.vscode/
+gain_boi_state.txt
+coverage.info
