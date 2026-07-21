@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "author": "Gain Boi",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-s3-devkitc-1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-rotary-encoder", "id": "encoder", "top": -70, "left": 230, "attrs": { "bounce": "1" } },
+    { "type": "wokwi-pushbutton", "id": "menu", "top": 80, "left": 250, "attrs": { "bounce": "1", "label": "Menu" } },
+    { "type": "wokwi-pushbutton", "id": "back", "top": 155, "left": 250, "attrs": { "bounce": "1", "label": "Back" } },
+    { "type": "wokwi-logic-analyzer", "id": "logic", "top": 245, "left": 220, "attrs": { "channels": "5" } }
+  ],
+  "connections": [
+    [ "esp:GND.1", "encoder:GND", "black", [ "h0" ] ],
+    [ "esp:3V3", "encoder:VCC", "red", [ "h0" ] ],
+    [ "esp:GPIO6", "encoder:CLK", "green", [ "h0" ] ],
+    [ "esp:GPIO4", "encoder:DT", "blue", [ "h0" ] ],
+    [ "esp:GPIO5", "encoder:SW", "orange", [ "h0" ] ],
+    [ "esp:GPIO2", "menu:1.l", "green", [ "h0" ] ],
+    [ "menu:2.r", "esp:GND.2", "black", [ "h0" ] ],
+    [ "esp:GPIO1", "back:1.l", "green", [ "h0" ] ],
+    [ "back:2.r", "esp:GND.2", "black", [ "h0" ] ],
+    [ "esp:GPIO6", "logic:D0", "green", [ "h0" ] ],
+    [ "esp:GPIO4", "logic:D1", "blue", [ "h0" ] ],
+    [ "esp:GPIO5", "logic:D2", "orange", [ "h0" ] ],
+    [ "esp:GPIO2", "logic:D3", "purple", [ "h0" ] ],
+    [ "esp:GPIO1", "logic:D4", "gray", [ "h0" ] ]
+  ]
+}
